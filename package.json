@@ -1,12 +1,13 @@
 {
-  "name": "init-ts-module",
+  "name": "entitizer.public-api",
   "version": "0.0.1",
-  "description": "Init TypeScript npm module",
-  "main": "./lib/index.js",
-  "types": "./types/index.d.ts",
+  "description": "Entitizer.public-api",
+  "private": true,
+  "main": "./lib/app.js",
   "scripts": {
+    "start": "node ./lib/app",
     "pretest": "npm run tsc",
-    "test": "mocha",
+    "test": "tsc && mocha",
     "tsc": "tsc",
     "tscw": "tsc -w",
     "preversion": "npm run tsc",
@@ -18,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mitica/init-ts-module.git"
+    "url": "git+https://Mitea@bitbucket.org/entitizer/public-api-js.git"
   },
   "keywords": [
     "ts",
@@ -27,12 +28,23 @@
   "author": "Dumitru Cantea",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Mitica/init-ts-module/issues"
+    "url": "https://Mitea@bitbucket.org/entitizer/public-api-js/issues"
   },
-  "homepage": "https://github.com/Mitica/init-ts-module#readme",
+  "homepage": "https://Mitea@bitbucket.org/entitizer/public-api-js#readme",
   "devDependencies": {
     "@types/node": "^7.0.5",
+    "@types/restify": "^2.0.42",
     "mocha": "^3.2.0",
-    "typescript": "^2.1.5"
+    "typescript": "^2.2.2"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "dotenv": "^4.0.0",
+    "entitizer.models": "^0.1.5",
+    "ournet.logger": "^0.1.0",
+    "redis": "^2.7.1",
+    "restify": "^4.3.0",
+    "restify-errors": "^4.3.0",
+    "restify-plugins": "^1.6.0"
   }
 }

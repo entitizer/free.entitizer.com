@@ -1,3 +1,3 @@
-# init-ts-module
+# entitizer.public-api
 
-Main files of a TypeScript npm module.
+Entitizer public API app.
