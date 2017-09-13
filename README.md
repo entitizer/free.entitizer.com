@@ -1,3 +1,3 @@
-# entitizer.public-api
+# entitizer.free-api
 
-Entitizer public API app.
+Entitizer public free API app.

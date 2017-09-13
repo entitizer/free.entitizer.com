@@ -1,7 +1,7 @@
 {
-  "name": "entitizer.public-api",
+  "name": "entitizer.free-api",
   "version": "0.0.1",
-  "description": "Entitizer.public-api",
+  "description": "Entitizer.free-api",
   "private": true,
   "main": "./lib/app.js",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://Mitea@bitbucket.org/entitizer/public-api-js.git"
+    "url": "git+https://Mitea@bitbucket.org/entitizer/free-api-js.git"
   },
   "keywords": [
     "ts",
@@ -28,9 +28,9 @@
   "author": "Dumitru Cantea",
   "license": "ISC",
   "bugs": {
-    "url": "https://Mitea@bitbucket.org/entitizer/public-api-js/issues"
+    "url": "https://Mitea@bitbucket.org/entitizer/free-api-js/issues"
   },
-  "homepage": "https://Mitea@bitbucket.org/entitizer/public-api-js#readme",
+  "homepage": "https://Mitea@bitbucket.org/entitizer/free-api-js#readme",
   "devDependencies": {
     "@types/express": "^4.0.37",
     "@types/node": "^8.x.x",
