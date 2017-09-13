@@ -1,24 +1,42 @@
 
 require('dotenv').config();
 
+import * as express from 'express';
 import { logger } from './logger';
-import { Context, extractEntities } from './data';
-import { mount } from './routes';
-const restify = require('restify');
-const plugins = require('restify-plugins');
+import { mountRoutes } from './routes';
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
-const server = restify.createServer({
-    name: 'entitizer',
-    version: '1.0.0'
+const isProduction = process.env.NODE_ENV === 'production';
+
+const app = express();
+
+if (isProduction) {
+    app.enable('trust proxy');
+    app.disable('x-powered-by');
+}
+app.disable('etag');
+
+app.use(cors());
+app.use(bodyParser.json()); // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
+    extended: true
+}));
+
+mountRoutes(app);
+
+app.all('*', function (req, res) {
+    res.status(404).end();
 });
 
-// server.use(restify.CORS());
-server.use(plugins.acceptParser(server.acceptable));
-server.use(plugins.queryParser());
-// server.use(plugins.bodyParser());
+app.listen(41716, function () {
+    console.log('%s listening at %s', app.name, process.env.PORT);
+});
 
-mount(server);
+process.on('unhandledRejection', function (error: Error) {
+    logger.error('unhandledRejection: ' + error.message, error);
+});
 
-server.listen(process.env.PORT, function () {
-    console.log('%s listening at %s', server.name, server.url);
+process.on('uncaughtException', function (error: Error) {
+    logger.error('uncaughtException: ' + error.message, error);
 });
