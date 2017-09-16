@@ -29,7 +29,7 @@ app.all('*', function (req, res) {
     res.status(404).end();
 });
 
-app.listen(41716, function () {
+app.listen(process.env.PORT, function () {
     console.log('%s listening at %s', app.name, process.env.PORT);
 });
 

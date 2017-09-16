@@ -19,7 +19,7 @@ const hourApiLimiter = new RateLimit({
 //     delayMs: 0 // disabled
 // });
 
-route.post('/entitize', hourApiLimiter, (req: Request, res: Response) => {
+route.get('/entitize', hourApiLimiter, (req: Request, res: Response) => {
     let lang = req.query.lang || req.body && req.body.lang;
     if (typeof lang === 'string') {
         lang = lang.toLowerCase();
