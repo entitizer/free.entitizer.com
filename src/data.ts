@@ -7,7 +7,7 @@ import {
     UniqueNameDataMapper,
     DynamoEntityStore,
     DynamoUniqueNameStore,
-    dynamoConfig,
+    // dynamoConfig,
     dynamoCreateTables,
     // RedisKeyringStore,
     DynamoKeyringStore
@@ -22,5 +22,5 @@ export const uniqueNameRepository = new DataUniqueNameRepository(new DynamoUniqu
 
 export const entitizer = new Entitizer(entityRepository, uniqueNameRepository);
 
-dynamoConfig({ region: 'dynamodb-local-frankfurt', endpoint: 'http://localhost:8000', accessKeyId: 'id', secretAccessKey: 'key' });
+// dynamoConfig({ region: 'dynamodb-local-frankfurt', endpoint: 'http://localhost:8000', accessKeyId: 'id', secretAccessKey: 'key' });
 dynamoCreateTables().catch(e => logger.error(e));
