@@ -3,6 +3,7 @@ import * as express from 'express';
 import { Request, Response } from 'express';
 import { sendSuccess, sendError } from '../utils';
 import { entitizer } from '../data';
+import { Constants } from 'entitizer.entities';
 export const route = express.Router();
 
 const RateLimit = require('express-rate-limit');
@@ -51,4 +52,8 @@ route.get('/entitize', hourApiLimiter, (req: Request, res: Response) => {
     entitizer.entitize({ lang, text, country })
         .then(result => sendSuccess(res, result))
         .catch(e => sendError(res, 500, e));
+});
+
+route.get('/languages', hourApiLimiter, (req: Request, res: Response) => {
+    sendSuccess(res, Constants.languages);
 });
