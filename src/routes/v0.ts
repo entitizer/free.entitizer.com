@@ -5,22 +5,23 @@ import { sendSuccess, sendError } from '../utils';
 import { entitizer } from '../data';
 import { Constants } from 'entitizer.entities';
 export const route = express.Router();
+const ms = require('ms');
 
 const RateLimit = require('express-rate-limit');
 
 const hourApiLimiter = new RateLimit({
-    windowMs: 1 * 60 * 60 * 1000, // 1 hour
+    windowMs: ms('1h'),
     max: 100,
-    delayMs: 0 // disabled
+    delayMs: 0
 });
 
-// const dayApiLimiter = new RateLimit({
-//     windowMs: 24 * 60 * 60 * 1000, // 24 hours
-//     max: 1000,
-//     delayMs: 0 // disabled
-// });
+const secondApiLimiter = new RateLimit({
+    windowMs: 1000,
+    max: 2,
+    delayMs: 0
+});
 
-route.get('/entitize', hourApiLimiter, (req: Request, res: Response) => {
+route.get('/entitize', secondApiLimiter, hourApiLimiter, (req: Request, res: Response) => {
     let lang = req.query.lang || req.body && req.body.lang;
     if (typeof lang === 'string') {
         lang = lang.toLowerCase();

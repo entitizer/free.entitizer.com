@@ -13,11 +13,26 @@ import {
     DynamoKeyringStore
 } from 'entitizer.data';
 
+import { RepAccessOptions } from 'entitizer.entities';
+
 import { Entitizer } from 'entitizer';
 
 export { Context } from 'entitizer';
 
-export const entityRepository = new DataEntityRepository(new DynamoEntityStore(), new EntityDataMapper());
+const OPTIONS = { fields: ['id', 'type', 'name', 'description', 'wikiTitle', 'cc2', 'lang', 'abbr', 'types', 'aliases'] };
+
+class LocalDataEntityRepository extends DataEntityRepository {
+    getByIds(ids: string[], options?: RepAccessOptions) {
+        options = options || OPTIONS;
+        return super.getByIds(ids, options);
+    }
+    getById(id: string, options?: RepAccessOptions) {
+        options = options || OPTIONS;
+        return super.getById(id, options);
+    }
+}
+
+export const entityRepository = new LocalDataEntityRepository(new DynamoEntityStore(), new EntityDataMapper());
 export const uniqueNameRepository = new DataUniqueNameRepository(new DynamoUniqueNameStore(new DynamoKeyringStore()), new UniqueNameDataMapper());
 
 export const entitizer = new Entitizer(entityRepository, uniqueNameRepository);
