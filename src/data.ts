@@ -19,7 +19,7 @@ import { Entitizer } from 'entitizer';
 
 export { Context } from 'entitizer';
 
-const OPTIONS = { fields: ['id', 'type', 'name', 'description', 'wikiTitle', 'cc2', 'lang', 'abbr', 'types', 'aliases'] };
+const OPTIONS = { fields: ['id', 'type', 'name', 'description', 'wikiTitle', 'cc2', 'lang', 'abbr', 'types', 'rank', 'extract'] };
 
 class LocalDataEntityRepository extends DataEntityRepository {
     getByIds(ids: string[], options?: RepAccessOptions) {
