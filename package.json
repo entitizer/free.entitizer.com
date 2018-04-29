@@ -1,18 +1,22 @@
 {
-  "name": "entitizer.free-api",
+  "name": "entitizer-free-api",
   "version": "0.1.0",
-  "description": "Entitizer.free-api",
   "private": true,
+  "description": "Entitizer free API",
   "main": "./lib/app.js",
   "scripts": {
-    "start": "tsc && node ./lib/app",
-    "pretest": "npm run tsc",
-    "test": "tsc && mocha",
+    "start": "tsc && node ./lib/app.js",
+    "build": "tsc",
+    "pretest": "npm run clean && npm run tsc",
+    "test": "ava --no-cache --verbose lib/**/*.test.js",
+    "posttest": "npm run clean-test-code",
     "tsc": "tsc",
     "tscw": "tsc -w",
     "preversion": "npm run tsc",
     "postversion": "git push --follow-tags",
-    "prepublish": "npm run tsc"
+    "prepublishOnly": "npm run tsc && npm run clean-test-code",
+    "clean": "rimraf ./lib && rimraf ./types",
+    "clean-test-code": "rimraf ./lib/**/*.test.js && rimraf ./types/**/*.test.d.ts"
   },
   "engines": {
     "node": ">=4.0.0"
@@ -22,8 +26,11 @@
     "url": "git+https://Mitea@bitbucket.org/entitizer/free-api-js.git"
   },
   "keywords": [
-    "ts",
-    "init-module"
+    "entitizer",
+    "textactor",
+    "app",
+    "free-api",
+    "api"
   ],
   "author": "Dumitru Cantea",
   "license": "ISC",
@@ -32,21 +39,20 @@
   },
   "homepage": "https://Mitea@bitbucket.org/entitizer/free-api-js#readme",
   "devDependencies": {
-    "@types/express": "^4.0.37",
-    "@types/ms": "^0.7.30",
-    "@types/node": "^8.x.x",
-    "typescript": "^2.4.2"
+    "@types/express": "^4.11.1",
+    "@types/node": "^9.6.6",
+    "ava": "^0.23.0",
+    "debug": "^3.1.0",
+    "dotenv": "^5.0.1",
+    "rimraf": "^2.6.2",
+    "typescript": "latest"
   },
   "dependencies": {
-    "body-parser": "^1.18.1",
+    "body-parser": "^1.18.2",
     "cors": "^2.8.4",
-    "dotenv": "^4.0.0",
-    "entitizer": "^0.2.0",
-    "entitizer.data": "^0.1.1",
-    "entitizer.entities": "^0.1.1",
-    "express": "^4.15.4",
-    "express-rate-limit": "^2.9.0",
-    "ms": "^2.0.0",
+    "express": "^4.16.3",
+    "express-rate-limit": "^2.11.0",
+    "ms": "^2.1.1",
     "ournet.logger": "^0.1.0"
   }
 }

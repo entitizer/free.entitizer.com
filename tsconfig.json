@@ -10,13 +10,15 @@
         "sourceMap": false,
         "moduleResolution": "node",
         "declaration": false,
-        "noUnusedLocals": true
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "allowJs": false
     },
     "formatCodeOptions": {
         "indentSize": 2,
         "tabSize": 2
     },
-    "files": [
-        "src/app.ts"
+    "include": [
+        "src/**/*.ts"
     ]
 }

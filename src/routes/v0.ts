@@ -1,10 +1,9 @@
 
 import * as express from 'express';
-import { Request, Response } from 'express';
+import { Request, Response, Router } from 'express';
 import { sendSuccess, sendError } from '../utils';
-import { entitizer } from '../data';
-import { Constants } from 'entitizer.entities';
-export const route = express.Router();
+import { extractor } from '../data';
+export const route: Router = express.Router();
 const ms = require('ms');
 
 const RateLimit = require('express-rate-limit');
@@ -21,7 +20,7 @@ const secondApiLimiter = new RateLimit({
     delayMs: 0
 });
 
-route.get('/entitize', secondApiLimiter, hourApiLimiter, (req: Request, res: Response) => {
+route.get('/extract', secondApiLimiter, hourApiLimiter, (req: Request, res: Response) => {
     let lang = req.query.lang || req.body && req.body.lang;
     if (typeof lang === 'string') {
         lang = lang.toLowerCase();
@@ -50,11 +49,11 @@ route.get('/entitize', secondApiLimiter, hourApiLimiter, (req: Request, res: Res
         country = country.toLowerCase();
     }
 
-    entitizer.entitize({ lang, text, country })
+    if (typeof country !== 'string' || country.length !== 2) {
+        return sendError(res, 400, { message: `field 'country' is required` });
+    }
+
+    extractor.extract({ lang, text, country })
         .then(result => sendSuccess(res, result))
         .catch(e => sendError(res, 500, e));
-});
-
-route.get('/languages', hourApiLimiter, (req: Request, res: Response) => {
-    sendSuccess(res, Constants.languages);
 });

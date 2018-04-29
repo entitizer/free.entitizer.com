@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
 
 mountRoutes(app);
 
-app.all('*', function (req, res) {
+app.all('*', function (_req: express.Request, res: express.Response) {
     res.status(404).end();
 });
 

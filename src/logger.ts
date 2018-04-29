@@ -1,10 +1,16 @@
 
-export const logger = require('ournet.logger');
+export const logger: ILogger = require('ournet.logger');
 
 if (process.env.NODE_ENV === 'production') {
-	logger.loggly({
-		tags: ['entitizer-api'],
-		json: true
-	});
-	logger.removeConsole();
+    (<any>logger).loggly({
+        tags: ['textactor-free-api'],
+        json: true
+    });
+    (<any>logger).removeConsole();
+}
+
+export interface ILogger {
+    error(message?: any, ...optionalParams: any[]): void
+    info(message?: any, ...optionalParams: any[]): void
+    warn(message?: any, ...optionalParams: any[]): void
 }

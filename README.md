@@ -1,9 +1,3 @@
-# entitizer.free-api
+# entitizer-free-api
 
-Entitizer public free API app.
-
-## API
-
-### /v0/entitize
-
-### /v0/languages
+Entitizer free api app
