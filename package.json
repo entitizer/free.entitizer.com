@@ -48,6 +48,8 @@
     "typescript": "latest"
   },
   "dependencies": {
+    "@textactor/actor-data": "^0.1.0",
+    "@textactor/ner": "^0.1.0",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
