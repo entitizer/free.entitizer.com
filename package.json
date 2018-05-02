@@ -16,7 +16,9 @@
     "postversion": "git push --follow-tags",
     "prepublishOnly": "npm run tsc && npm run clean-test-code",
     "clean": "rimraf ./lib && rimraf ./types",
-    "clean-test-code": "rimraf ./lib/**/*.test.js && rimraf ./types/**/*.test.d.ts"
+    "clean-test-code": "rimraf ./lib/**/*.test.js && rimraf ./types/**/*.test.d.ts",
+    "dev": "yarn remove @textactor/actor-data && yarn remove @textactor/ner && yarn link @textactor/actor-data && yarn link @textactor/ner",
+    "prod": "yarn unlink @textactor/actor-data && yarn unlink @textactor/ner && yarn add @textactor/actor-data && yarn add @textactor/ner"
   },
   "engines": {
     "node": ">=4.0.0"
@@ -48,8 +50,8 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "@textactor/actor-data": "^0.1.0",
-    "@textactor/ner": "^0.1.0",
+    "@textactor/actor-data": "^0.1.1",
+    "@textactor/ner": "^0.1.1",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
