@@ -67,13 +67,13 @@
     slugify "^1.2.9"
     standard-text "^0.1.1"
 
-"@textactor/ner@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.1.1.tgz#37086068cccde47ea550a077a2fe64892f19445e"
+"@textactor/ner@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.1.2.tgz#31c0eff848e2a819a4f6558f0d932fe61b15cff2"
   dependencies:
     "@textactor/actor-domain" "^0.1.1"
     "@textactor/domain" "^0.1.4"
-    concepts-parser "^1.3.0"
+    concepts-parser "^1.3.1"
 
 "@types/body-parser@*":
   version "1.17.0"
@@ -963,16 +963,16 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
 
-concepts-data@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/concepts-data/-/concepts-data-0.4.1.tgz#8f06e6fa9bf47f48d93e706e9083e7bc62815546"
+concepts-data@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/concepts-data/-/concepts-data-0.4.2.tgz#599bbeaec65503a17cd5307cd1384c0cc3fe8c81"
 
-concepts-parser@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/concepts-parser/-/concepts-parser-1.3.0.tgz#c3a6496752f124ba601180261a2ac44fae0ef477"
+concepts-parser@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/concepts-parser/-/concepts-parser-1.3.1.tgz#531e4d5e17d0e9f9f73d4c2ff0e4ee1e4b55aaf6"
   dependencies:
     atonic "^1.x.x"
-    concepts-data "^0.4.1"
+    concepts-data "^0.4.2"
 
 concordance@^3.0.0:
   version "3.0.0"
