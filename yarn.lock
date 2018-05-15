@@ -44,17 +44,18 @@
   dependencies:
     arrify "^1.0.1"
 
-"@textactor/actor-data@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@textactor/actor-data/-/actor-data-0.1.1.tgz#c649267875df6621c2db0056e63e24a1d195ed2b"
+"@textactor/actor-data@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@textactor/actor-data/-/actor-data-0.1.2.tgz#44bc53a0384c5d829f96b8bb0c2ae267529c6c16"
   dependencies:
-    "@textactor/actor-domain" "^0.1.1"
+    "@textactor/actor-domain" "^0.1.2"
+    "@textactor/domain" "^0.1.4"
     dynamodb "^1.1.1"
     joi "^13.2.0"
 
-"@textactor/actor-domain@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@textactor/actor-domain/-/actor-domain-0.1.1.tgz#e2405313d489324c067db88a69768809e9cad528"
+"@textactor/actor-domain@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@textactor/actor-domain/-/actor-domain-0.1.2.tgz#6e4ea0a77484cd6737f9401307477a69dd4d4bbc"
   dependencies:
     "@textactor/domain" "^0.1.4"
     shortid "^2.2.8"
@@ -67,11 +68,11 @@
     slugify "^1.2.9"
     standard-text "^0.1.1"
 
-"@textactor/ner@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.1.2.tgz#31c0eff848e2a819a4f6558f0d932fe61b15cff2"
+"@textactor/ner@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.1.3.tgz#18d59956e4ca880293f720e0c1d753733e8ed69c"
   dependencies:
-    "@textactor/actor-domain" "^0.1.1"
+    "@textactor/actor-domain" "^0.1.2"
     "@textactor/domain" "^0.1.4"
     concepts-parser "^1.3.1"
 
@@ -369,8 +370,8 @@ ava@^0.23.0:
     update-notifier "^2.3.0"
 
 aws-sdk@^2.186.x:
-  version "2.230.1"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.230.1.tgz#494cef6aed2e16db1ed9c12acf4bd2a7317f5365"
+  version "2.239.1"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.239.1.tgz#299a3e611e5c47b39230bd1f51e2d25d1fbdb345"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -381,7 +382,6 @@ aws-sdk@^2.186.x:
     url "0.10.3"
     uuid "3.1.0"
     xml2js "0.4.17"
-    xmlbuilder "4.2.1"
 
 aws-sign2@~0.6.0:
   version "0.6.0"
@@ -1999,8 +1999,8 @@ joi@10.x.x:
     topo "2.x.x"
 
 joi@^13.2.0:
-  version "13.2.0"
-  resolved "https://registry.yarnpkg.com/joi/-/joi-13.2.0.tgz#72307f1765bb40b068361f9368a4ba1092b8478e"
+  version "13.3.0"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-13.3.0.tgz#4defd4333b539c5d10e444ab44f5a5583480f17c"
   dependencies:
     hoek "5.x.x"
     isemail "3.x.x"
@@ -3068,8 +3068,8 @@ slide@^1.1.5:
   resolved "https://registry.yarnpkg.com/slide/-/slide-1.1.6.tgz#56eb027d65b4d2dce6cb2e2d32c4d4afc9e1d707"
 
 slugify@^1.2.9:
-  version "1.2.9"
-  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.2.9.tgz#c3d518f5136b3c69345d5d0bbbcde7412b5694aa"
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.3.0.tgz#787919259d28c825fbcae6da2e01c77a109793f6"
 
 sntp@1.x.x:
   version "1.0.9"
@@ -3528,7 +3528,7 @@ xml2js@0.4.17:
     sax ">=0.6.0"
     xmlbuilder "^4.1.0"
 
-xmlbuilder@4.2.1, xmlbuilder@^4.1.0:
+xmlbuilder@^4.1.0:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-4.2.1.tgz#aa58a3041a066f90eaa16c2f5389ff19f3f461a5"
   dependencies:
