@@ -42,6 +42,7 @@
   "homepage": "https://Mitea@bitbucket.org/entitizer/free-api-js#readme",
   "devDependencies": {
     "@types/express": "^4.11.1",
+    "@types/lru-cache": "^4.1.0",
     "@types/node": "^9.6.6",
     "ava": "^0.23.0",
     "debug": "^3.1.0",
@@ -52,10 +53,12 @@
   "dependencies": {
     "@textactor/actor-data": "^0.1.2",
     "@textactor/ner": "^0.1.4",
+    "@textactor/wikientity-data": "^0.1.0",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "express-rate-limit": "^2.11.0",
+    "lru-cache": "^4.1.3",
     "ms": "^2.1.1",
     "ournet.logger": "^0.1.0"
   }

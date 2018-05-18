@@ -2,7 +2,7 @@
 import * as express from 'express';
 import { Request, Response, Router } from 'express';
 import { sendSuccess, sendError } from '../utils';
-import { extractor } from '../data';
+import { extractor, wikiEntityRepository } from '../data';
 export const route: Router = express.Router();
 const ms = require('ms');
 
@@ -54,6 +54,22 @@ route.get('/extract', secondApiLimiter, hourApiLimiter, (req: Request, res: Resp
     }
 
     extractor.extract({ lang, text, country })
+        .then(async result => {
+            if (result) {
+                const ids = result.entities
+                    .filter(item => item.entity && item.entity.wikiDataId)
+                    .map(item => item.entity.wikiDataId);
+                if (ids.length) {
+                    const wikiEntities = await wikiEntityRepository.getByIds(ids);
+                    (<any>result).wiki = {};
+                    wikiEntities.forEach(item => {
+                        delete item.id;
+                        (<any>result).wiki[item.wikiDataId] = item;
+                    });
+                }
+            }
+            return result;
+        })
         .then(result => sendSuccess(res, result))
         .catch(e => sendError(res, 500, e));
 });
