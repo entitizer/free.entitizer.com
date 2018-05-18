@@ -3,6 +3,9 @@ import * as express from 'express';
 import { Request, Response, Router } from 'express';
 import { sendSuccess, sendError } from '../utils';
 import { extractor, wikiEntityRepository } from '../data';
+import { uniq } from '@textactor/domain';
+import { EResult } from '@textactor/ner/types/types';
+import { WikiEntity } from '@textactor/wikientity-domain';
 export const route: Router = express.Router();
 const ms = require('ms');
 
@@ -22,6 +25,7 @@ const secondApiLimiter = new RateLimit({
 
 route.get('/extract', secondApiLimiter, hourApiLimiter, (req: Request, res: Response) => {
     let lang = req.query.lang || req.body && req.body.lang;
+    let qsWikidata = req.query.wikidata || req.body && req.body.wikidata;
     if (typeof lang === 'string') {
         lang = lang.toLowerCase();
     }
@@ -56,16 +60,9 @@ route.get('/extract', secondApiLimiter, hourApiLimiter, (req: Request, res: Resp
     extractor.extract({ lang, text, country })
         .then(async result => {
             if (result) {
-                const ids = result.entities
-                    .filter(item => item.entity && item.entity.wikiDataId)
-                    .map(item => item.entity.wikiDataId);
-                if (ids.length) {
-                    const wikiEntities = await wikiEntityRepository.getByIds(ids);
-                    (<any>result).wiki = {};
-                    wikiEntities.forEach(item => {
-                        delete item.id;
-                        (<any>result).wiki[item.wikiDataId] = item;
-                    });
+                result.entities.forEach(item => item.entity && delete item.entity.id);
+                if (~['true', 'True', '1', 'yes', 'on'].indexOf(qsWikidata)) {
+                    (<any>result).wikidata = await getResultWikidata(lang, result);
                 }
             }
             return result;
@@ -73,3 +70,24 @@ route.get('/extract', secondApiLimiter, hourApiLimiter, (req: Request, res: Resp
         .then(result => sendSuccess(res, result))
         .catch(e => sendError(res, 500, e));
 });
+
+async function getResultWikidata(lang: string, result: EResult) {
+    const LANG = lang.toUpperCase();
+    const wikidata: { [index: string]: WikiEntity } = {};
+    let ids = result.entities
+        .filter(item => item.entity && item.entity.wikiDataId)
+        .map(item => `${LANG}${item.entity.wikiDataId}`);
+    if (ids.length) {
+        ids = uniq(ids);
+        ids = ids.slice(0, 20);
+        const wikiEntities = await wikiEntityRepository.getByIds(ids);
+        wikiEntities.forEach(item => {
+            delete item.id;
+            delete item.createdAt;
+            delete item.updatedAt;
+
+            wikidata[item.wikiDataId] = item;
+        });
+    }
+    return wikidata;
+}

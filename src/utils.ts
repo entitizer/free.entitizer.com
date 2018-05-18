@@ -1,5 +1,6 @@
 
 import { Response } from 'express';
+import { logger } from './logger';
 
 export function sendSuccess(res: Response, data: any) {
     const result = {
@@ -10,8 +11,9 @@ export function sendSuccess(res: Response, data: any) {
 }
 
 export function sendError(res: Response, status: number, error: any) {
+    logger.error('error', error);
     const result = {
-        error: error
+        error: { message: error.message }
     };
 
     res.status(status).send(result);
