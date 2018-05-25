@@ -44,52 +44,52 @@
   dependencies:
     arrify "^1.0.1"
 
-"@textactor/actor-data@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@textactor/actor-data/-/actor-data-0.1.2.tgz#44bc53a0384c5d829f96b8bb0c2ae267529c6c16"
+"@textactor/actor-data@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@textactor/actor-data/-/actor-data-0.1.3.tgz#d241f97d985d463d5c0fef1ef3d998f6bd3f1bae"
   dependencies:
-    "@textactor/actor-domain" "^0.1.2"
-    "@textactor/domain" "^0.1.4"
+    "@textactor/actor-domain" "^0.1.3"
+    "@textactor/domain" "^0.1.5"
     dynamodb "^1.1.1"
     joi "^13.2.0"
 
-"@textactor/actor-domain@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@textactor/actor-domain/-/actor-domain-0.1.2.tgz#6e4ea0a77484cd6737f9401307477a69dd4d4bbc"
+"@textactor/actor-domain@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@textactor/actor-domain/-/actor-domain-0.1.3.tgz#9aa607c7f329151d71f380e0a39431a492dbd619"
   dependencies:
-    "@textactor/domain" "^0.1.4"
+    "@textactor/domain" "^0.1.5"
     shortid "^2.2.8"
 
-"@textactor/domain@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@textactor/domain/-/domain-0.1.4.tgz#6dc901d7442ed83e64866578a729cf386e288471"
+"@textactor/domain@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@textactor/domain/-/domain-0.1.5.tgz#e16413deb53f0e1cbc841cfb532c619a50df9b59"
   dependencies:
     atonic "^1.0.4"
     slugify "^1.2.9"
     standard-text "^0.1.1"
 
-"@textactor/ner@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.1.4.tgz#d07ab86a56935cfec0021284148ba650b84f81c7"
+"@textactor/ner@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.1.5.tgz#3ec11f3d5f5334bbd99779221ffc1643ba404d73"
   dependencies:
-    "@textactor/actor-domain" "^0.1.2"
-    "@textactor/domain" "^0.1.4"
+    "@textactor/actor-domain" "^0.1.3"
+    "@textactor/domain" "^0.1.5"
     concepts-parser "^1.3.1"
 
-"@textactor/wikientity-data@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@textactor/wikientity-data/-/wikientity-data-0.1.0.tgz#4768126477f6c4e1fa1cb767a765c83d1827dcb2"
+"@textactor/wikientity-data@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@textactor/wikientity-data/-/wikientity-data-0.1.1.tgz#8db79722f2aa2810189b218e0874c0b3ff5eb299"
   dependencies:
-    "@textactor/domain" "^0.1.4"
-    "@textactor/wikientity-domain" "^0.1.0"
+    "@textactor/domain" "^0.1.5"
+    "@textactor/wikientity-domain" "^0.1.1"
     dynamodb "^1.1.1"
     joi "^13.2.0"
 
-"@textactor/wikientity-domain@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@textactor/wikientity-domain/-/wikientity-domain-0.1.0.tgz#143f4b951ec09a41e1caf51abeee8add8841605f"
+"@textactor/wikientity-domain@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@textactor/wikientity-domain/-/wikientity-domain-0.1.1.tgz#003750a6ef77b0e26b7c1b6fdca3e30411acd55a"
   dependencies:
-    "@textactor/domain" "^0.1.4"
+    "@textactor/domain" "^0.1.5"
 
 "@types/body-parser@*":
   version "1.17.0"
@@ -389,8 +389,8 @@ ava@^0.23.0:
     update-notifier "^2.3.0"
 
 aws-sdk@^2.186.x:
-  version "2.239.1"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.239.1.tgz#299a3e611e5c47b39230bd1f51e2d25d1fbdb345"
+  version "2.246.1"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.246.1.tgz#da24e62e69a4aaf8c5a98ac1ebbac9d24e601bc9"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -2739,8 +2739,8 @@ punycode@1.3.2:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.3.2.tgz#9653a036fb7c1ee42342f2325cceefea3926c48d"
 
 punycode@2.x.x:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.0.tgz#5f863edc89b96db09074bad7947bf09056ca4e7d"
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
 
 punycode@^1.4.1:
   version "1.4.1"
@@ -2993,8 +2993,8 @@ safe-buffer@^5.0.1, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
 
 safe-json-stringify@~1:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/safe-json-stringify/-/safe-json-stringify-1.1.0.tgz#bd2b6dad1ebafab3c24672a395527f01804b7e19"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/safe-json-stringify/-/safe-json-stringify-1.2.0.tgz#356e44bc98f1f93ce45df14bcd7c01cda86e0afd"
 
 safer-buffer@^2.1.0:
   version "2.1.2"
