@@ -4,7 +4,7 @@ import { Request, Response, Router } from 'express';
 import { sendSuccess, sendError } from '../utils';
 import { extractor, wikiEntityRepository } from '../data';
 import { uniq } from '@textactor/domain';
-import { EResult } from '@textactor/ner/types/types';
+import { EResult } from '@textactor/ner';
 import { WikiEntity } from '@textactor/wikientity-domain';
 export const route: Router = express.Router();
 const ms = require('ms');

@@ -49,9 +49,11 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "@textactor/actor-data": "^0.1.3",
-    "@textactor/ner": "^0.1.5",
-    "@textactor/wikientity-data": "^0.1.1",
+    "@textactor/actor-data": "^0.1.4",
+    "@textactor/domain": "^0.1.6",
+    "@textactor/ner": "^0.1.6",
+    "@textactor/wikientity-data": "^0.1.2",
+    "@textactor/wikientity-domain": "^0.1.2",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
