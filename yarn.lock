@@ -44,18 +44,18 @@
   dependencies:
     arrify "^1.0.1"
 
-"@textactor/actor-data@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@textactor/actor-data/-/actor-data-0.1.4.tgz#d6b8884a256339005883fe5c27e10ac5898317c9"
+"@textactor/actor-data@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@textactor/actor-data/-/actor-data-0.1.5.tgz#cf34f02ca3dbb44df1a56b1ed8b59721f870cebc"
   dependencies:
-    "@textactor/actor-domain" "^0.1.4"
+    "@textactor/actor-domain" "^0.1.6"
     "@textactor/domain" "^0.1.6"
     dynamodb "^1.1.1"
     joi "^13.2.0"
 
-"@textactor/actor-domain@^0.1.4", "@textactor/actor-domain@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@textactor/actor-domain/-/actor-domain-0.1.5.tgz#912a2a176de510c508c547fc4c497b254c185af2"
+"@textactor/actor-domain@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@textactor/actor-domain/-/actor-domain-0.1.6.tgz#ecf6c26da8135356979863073aa628cb496dfaf8"
   dependencies:
     "@textactor/domain" "^0.1.6"
     fast-array-diff "^0.2.0"
@@ -69,11 +69,11 @@
     slugify "^1.2.9"
     standard-text "^0.1.1"
 
-"@textactor/ner@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.1.6.tgz#1a090be2cc6825f5b6ab2ed93c2f9fbac2913d35"
+"@textactor/ner@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.1.7.tgz#2803ffad536a855e1d48b42e56f0c33bb0b310af"
   dependencies:
-    "@textactor/actor-domain" "^0.1.5"
+    "@textactor/actor-domain" "^0.1.6"
     "@textactor/domain" "^0.1.6"
     concepts-parser "^1.4.1"
 
@@ -390,8 +390,8 @@ ava@^0.23.0:
     update-notifier "^2.3.0"
 
 aws-sdk@^2.186.x:
-  version "2.282.1"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.282.1.tgz#3e425b76c9a98d3374c8d70660f83619f66c92fd"
+  version "2.284.1"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.284.1.tgz#1f0d2a6081613c6c9756c0cc7ec21b99495ca7c8"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -2018,8 +2018,8 @@ joi@10.6.x:
     topo "2.x.x"
 
 joi@^13.2.0:
-  version "13.4.0"
-  resolved "https://registry.yarnpkg.com/joi/-/joi-13.4.0.tgz#afc359ee3d8bc5f9b9ba6cdc31b46d44af14cecc"
+  version "13.5.2"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-13.5.2.tgz#32207c85fa76d889f1e971c7eaaf69b232259a91"
   dependencies:
     hoek "5.x.x"
     isemail "3.x.x"
