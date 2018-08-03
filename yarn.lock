@@ -44,18 +44,18 @@
   dependencies:
     arrify "^1.0.1"
 
-"@textactor/actor-data@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@textactor/actor-data/-/actor-data-0.1.5.tgz#cf34f02ca3dbb44df1a56b1ed8b59721f870cebc"
+"@textactor/actor-data@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@textactor/actor-data/-/actor-data-0.1.6.tgz#785ceafe57aad6dbcaf6fcf3d8b53ef4f88f21a6"
   dependencies:
-    "@textactor/actor-domain" "^0.1.6"
+    "@textactor/actor-domain" "^0.1.7"
     "@textactor/domain" "^0.1.6"
     dynamodb "^1.1.1"
     joi "^13.2.0"
 
-"@textactor/actor-domain@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@textactor/actor-domain/-/actor-domain-0.1.6.tgz#ecf6c26da8135356979863073aa628cb496dfaf8"
+"@textactor/actor-domain@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@textactor/actor-domain/-/actor-domain-0.1.7.tgz#e4553ac6093dd2d6e560a7b343fbdc9fcb219d1a"
   dependencies:
     "@textactor/domain" "^0.1.6"
     fast-array-diff "^0.2.0"
@@ -69,11 +69,11 @@
     slugify "^1.2.9"
     standard-text "^0.1.1"
 
-"@textactor/ner@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.1.7.tgz#2803ffad536a855e1d48b42e56f0c33bb0b310af"
+"@textactor/ner@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.1.8.tgz#be363dc55c5441dc6e68766b2c4ab849142c8751"
   dependencies:
-    "@textactor/actor-domain" "^0.1.6"
+    "@textactor/actor-domain" "^0.1.7"
     "@textactor/domain" "^0.1.6"
     concepts-parser "^1.4.1"
 
@@ -390,8 +390,8 @@ ava@^0.23.0:
     update-notifier "^2.3.0"
 
 aws-sdk@^2.186.x:
-  version "2.284.1"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.284.1.tgz#1f0d2a6081613c6c9756c0cc7ec21b99495ca7c8"
+  version "2.286.2"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.286.2.tgz#0f35a1b3158049c015161ed83872a38305a7908a"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
