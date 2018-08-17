@@ -51,7 +51,7 @@
   "dependencies": {
     "@textactor/actor-data": "^0.1.6",
     "@textactor/domain": "^0.1.6",
-    "@textactor/ner": "^0.1.8",
+    "@textactor/ner": "^0.1.9",
     "@textactor/wikientity-data": "^0.1.2",
     "@textactor/wikientity-domain": "^0.1.2",
     "body-parser": "^1.18.2",
