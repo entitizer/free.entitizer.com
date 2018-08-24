@@ -11,7 +11,7 @@ export function sendSuccess(res: Response, data: any) {
 }
 
 export function sendError(res: Response, status: number, error: any) {
-    logger.error('error', error);
+    logger.error(error);
     const result = {
         error: { message: error.message }
     };
