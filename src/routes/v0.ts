@@ -24,44 +24,39 @@ const secondApiLimiter = new RateLimit({
 });
 
 route.get('/extract', secondApiLimiter, hourApiLimiter, (req: Request, res: Response) => {
-    let lang = req.query.lang || req.body && req.body.lang;
-    let qsWikidata = req.query.wikidata || req.body && req.body.wikidata;
-    if (typeof lang === 'string') {
-        lang = lang.toLowerCase();
+    let input: InputParams;
+    try {
+        input = parseInput(req);
+    } catch (e) {
+        return sendError(res, 400, e.message);
     }
 
-    if (typeof lang !== 'string' || lang.length !== 2) {
-        return sendError(res, 400, { message: `field 'lang' is required` });
+    extractAndSendResult(input, res);
+})
+
+route.get('/key_extract', (req: Request, res: Response) => {
+    const key = req.query.key || req.headers['key'] || req.body.key;
+    if (!key || key !== process.env.SECRET_KEY) {
+        return sendError(res, 401, 'Unauthorized');
+    }
+    let input: InputParams;
+    try {
+        input = parseInput(req);
+    } catch (e) {
+        return sendError(res, 400, e.message);
     }
 
-    let text = req.query.text || req.body && req.body.text;
+    extractAndSendResult(input, res);
+})
 
-    if (typeof text !== 'string') {
-        return sendError(res, 400, { message: `field 'text' is required` });
-    }
-
-    if (text.length < 10) {
-        return sendError(res, 400, { message: `field 'text' is too short` });
-    }
-
-    if (text.length > 5000) {
-        return sendError(res, 400, { message: `field 'text' is too long` });
-    }
-
-    let country = req.query.country || req.body && req.body.country;
-    if (typeof country === 'string') {
-        country = country.toLowerCase();
-    }
-
-    if (typeof country !== 'string' || country.length !== 2) {
-        return sendError(res, 400, { message: `field 'country' is required` });
-    }
+function extractAndSendResult(input: InputParams, res: Response) {
+    const { lang, country, text, wikidata } = input;
 
     extractor.extract({ lang, text, country })
         .then(async result => {
             if (result) {
                 result.entities.forEach(item => item.entity && delete item.entity.id);
-                if (~['true', 'True', '1', 'yes', 'on'].indexOf(qsWikidata)) {
+                if (wikidata) {
                     (<any>result).wikidata = await getResultWikidata(lang, result);
                 }
             }
@@ -69,7 +64,7 @@ route.get('/extract', secondApiLimiter, hourApiLimiter, (req: Request, res: Resp
         })
         .then(result => sendSuccess(res, result))
         .catch(e => sendError(res, 500, e));
-});
+}
 
 async function getResultWikidata(lang: string, result: EResult) {
     const LANG = lang.toUpperCase();
@@ -90,4 +85,53 @@ async function getResultWikidata(lang: string, result: EResult) {
         });
     }
     return wikidata;
+}
+
+type InputParams = {
+    lang: string
+    country: string
+    text: string
+    wikidata: boolean
+}
+
+function parseInput(req: Request): InputParams {
+    let lang = req.query.lang || req.body && req.body.lang;
+    let qsWikidata = req.query.wikidata || req.body && req.body.wikidata;
+    if (typeof lang === 'string') {
+        lang = lang.toLowerCase();
+    }
+
+    if (typeof lang !== 'string' || lang.length !== 2) {
+        throw new Error(`field 'lang' is required`);
+    }
+
+    let text = req.query.text || req.body && req.body.text;
+
+    if (typeof text !== 'string') {
+        throw new Error(`field 'text' is required`);
+    }
+
+    if (text.length < 10) {
+        throw new Error(`field 'text' is too short`);
+    }
+
+    if (text.length > 5000) {
+        throw new Error(`field 'text' is too long`);
+    }
+
+    let country = req.query.country || req.body && req.body.country;
+    if (typeof country === 'string') {
+        country = country.toLowerCase();
+    }
+
+    if (typeof country !== 'string' || country.length !== 2) {
+        throw new Error(`field 'country' is required`);
+    }
+
+    return {
+        lang,
+        country,
+        text,
+        wikidata: ['true', 'True', '1', 'yes', 'on'].indexOf(qsWikidata) > -1,
+    };
 }
