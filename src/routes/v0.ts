@@ -2,10 +2,12 @@
 import * as express from 'express';
 import { Request, Response, Router } from 'express';
 import { sendSuccess, sendError } from '../utils';
-import { extractor, wikiEntityRepository } from '../data';
+import { extractor, wikiEntityRepository, learningTextRepository } from '../data';
 import { uniq } from '@textactor/domain';
 import { EResult } from '@textactor/ner';
 import { WikiEntity } from '@textactor/wikientity-domain';
+import { logger } from '@textactor/actor-domain/dest/logger';
+import { LearningTextHelper } from '@textactor/concept-domain';
 export const route: Router = express.Router();
 const ms = require('ms');
 
@@ -51,6 +53,11 @@ route.get('/key_extract', (req: Request, res: Response) => {
 
 function extractAndSendResult(input: InputParams, res: Response) {
     const { lang, country, text, wikidata } = input;
+
+    if (text && text.trim().length > 100) {
+        learningTextRepository.put(LearningTextHelper.build({ lang, country, text }))
+            .catch(e => logger.error(e));
+    }
 
     extractor.extract({ lang, text, country })
         .then(async result => {
