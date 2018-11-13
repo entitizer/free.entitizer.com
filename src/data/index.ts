@@ -1,11 +1,14 @@
 
-import { ActorRepository, ActorModel, ActorNameModel, ActorNameRepository } from '@textactor/actor-data';
+import { ActorNameRepositoryBuilder, ActorRepositoryBuilder } from '@textactor/actor-data';
 import { Extractor } from '@textactor/ner';
-import { CacheWikiEntityRepository } from './wikiEntityRepository';
-import { WikiEntityModel } from '@textactor/wikientity-data';
+import { CacheWikiEntityRepository } from './wiki-entity-repository';
+import { WikiEntityRepositoryBuilder } from '@textactor/wikientity-data';
+import DynamoDB = require('aws-sdk/clients/dynamodb');
 
-const actorRepository = new ActorRepository(new ActorModel());
-const actorNameRepository = new ActorNameRepository(new ActorNameModel());
+const dynamoDbClient = new DynamoDB.DocumentClient();
+
+const actorRepository = ActorRepositoryBuilder.build(dynamoDbClient);
+const actorNameRepository = ActorNameRepositoryBuilder.build(dynamoDbClient);
 
 export const extractor = new Extractor(actorRepository, actorNameRepository);
-export const wikiEntityRepository = new CacheWikiEntityRepository(new WikiEntityModel());
+export const wikiEntityRepository = new CacheWikiEntityRepository(WikiEntityRepositoryBuilder.build(dynamoDbClient));
