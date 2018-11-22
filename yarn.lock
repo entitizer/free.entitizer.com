@@ -108,14 +108,14 @@
     joi "^14.0.4"
     standard-text "^0.1.1"
 
-"@textactor/ner@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.2.0.tgz#ba8e652d97d08be1d00adbe6fc5d59f09209c91e"
-  integrity sha512-ip+6rcW7HYB5Z7k/OVJP4IqyT9Qfvgfugcn0cmejcNuGGm8ZpSpQATS81UPyxqPJKKjb71rtda8XLQKh0LMnBQ==
+"@textactor/ner@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.2.1.tgz#eb84dbb5e3779853894e0a83c6d8b394b791b6a8"
+  integrity sha512-8e3n3XpR2JWKI1epByyOUoDeKWtCgyGINWVLM9oq/DCe4xm3tdFafeBk2pXqVx4uzkmwGYFRpbVKv5y3S+NN+Q==
   dependencies:
     "@textactor/actor-domain" "^0.2.0"
     "@textactor/domain" "^0.2.0"
-    concepts-parser "^1.5.0"
+    concepts-parser "^1.5.2"
 
 "@textactor/wikientity-data@^0.2.0":
   version "0.2.0"
@@ -1269,10 +1269,10 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-concepts-parser@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/concepts-parser/-/concepts-parser-1.5.0.tgz#9e8f3cc54ca5f715a8f2ea7cc0453084f3dd76a1"
-  integrity sha512-DaboDQQ0DSzWGDtFKD1WV80ylcu7/f0UGI3oB74urC4OdWjx5ZVcNIxVsN0SGAHA/ZHykIjeB8Gq74rrjd9HDQ==
+concepts-parser@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/concepts-parser/-/concepts-parser-1.5.2.tgz#eedf1e7bc1fdfd44843191e9404899c45a731af8"
+  integrity sha512-1G6NNw2YZIzinS/VCyDngf7O1i1vJG7BnwF0UEFhlc2IMv0GzmxB+lq8iKolSKUhj3QzFlKtFot7iJtC1i8HeA==
   dependencies:
     atonic "^1.x.x"
 
