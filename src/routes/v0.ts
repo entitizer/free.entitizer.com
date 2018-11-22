@@ -36,7 +36,10 @@ route.get('/extract', secondApiLimiter, hourApiLimiter, (req: Request, res: Resp
     extractAndSendResult(input, res);
 })
 
-route.get('/key_extract', (req: Request, res: Response) => {
+route.get('/key_extract', keyExtract);
+route.post('/key_extract', keyExtract);
+
+function keyExtract(req: Request, res: Response) {
     const key = req.query.key || req.headers['key'] || req.body.key;
     if (!key || key !== process.env.SECRET_KEY) {
         return sendError(res, 401, 'Unauthorized');
@@ -49,7 +52,7 @@ route.get('/key_extract', (req: Request, res: Response) => {
     }
 
     extractAndSendResult(input, res);
-})
+}
 
 function extractAndSendResult(input: InputParams, res: Response) {
     const { lang, country, text, wikidata } = input;
