@@ -5,7 +5,7 @@ import { CacheWikiEntityRepository } from './wiki-entity-repository';
 import { WikiEntityRepositoryBuilder } from '@textactor/wikientity-data';
 import DynamoDB = require('aws-sdk/clients/dynamodb');
 import { MongoClient } from 'mongodb';
-import { LearningTextRepository } from '@textactor/concept-domain';
+import { LearningTextRepository, LearningTextValidator } from '@textactor/concept-domain';
 import { LearningTextRepositoryBuilder } from '@textactor/concept-data';
 
 const dynamoDbClient = new DynamoDB.DocumentClient();
@@ -21,6 +21,6 @@ export let learningTextRepository: LearningTextRepository;
 
 export async function initData() {
     mongoClient = await MongoClient.connect(process.env.CONCEPT_DB);
-    learningTextRepository = LearningTextRepositoryBuilder.build(mongoClient.db());
+    learningTextRepository = LearningTextRepositoryBuilder.build(mongoClient.db(), new LearningTextValidator());
     await learningTextRepository.createStorage();
 }
