@@ -2,6 +2,6 @@
 
 #update repository
 git pull
-npm install
-tsc
+yarn
+yarn tsc
 pm2 restart ./pm2.json

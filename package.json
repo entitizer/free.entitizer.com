@@ -19,7 +19,7 @@
     "clean-test-code": "rimraf ./lib/**/*.test.js && rimraf ./types/**/*.test.d.ts"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=8.0.0"
   },
   "repository": {
     "type": "git",
@@ -64,7 +64,6 @@
     "express-rate-limit": "^3.3.2",
     "lru-cache": "^5.1.1",
     "mongodb": "^3.1.10",
-    "ms": "^2.1.1",
-    "ournet.logger": "^0.1.0"
+    "ms": "^2.1.1"
   }
 }
