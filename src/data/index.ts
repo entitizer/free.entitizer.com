@@ -27,7 +27,7 @@ let mongoClient: MongoClient;
 export let learningTextRepository: LearningTextRepository;
 
 export async function initData() {
-  mongoClient = await MongoClient.connect(process.env.CONCEPT_DB);
+  mongoClient = await new MongoClient(process.env.CONCEPT_DB, {}).connect();
   learningTextRepository = LearningTextRepositoryBuilder.build(
     mongoClient.db(),
     new LearningTextValidator()
