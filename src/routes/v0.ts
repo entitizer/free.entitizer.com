@@ -115,8 +115,11 @@ type InputParams = {
 };
 
 function parseInput(req: Request): InputParams {
-  let lang = req.query.lang || (req.body && req.body.lang);
-  let qsWikidata = req.query.wikidata || (req.body && req.body.wikidata);
+  let lang = req.query.lang || req.params.lang || (req.body && req.body.lang);
+  let qsWikidata =
+    req.query.wikidata ||
+    req.params.wikidata ||
+    (req.body && req.body.wikidata);
   if (typeof lang === "string") {
     lang = lang.toLowerCase();
   }
@@ -125,7 +128,7 @@ function parseInput(req: Request): InputParams {
     throw new Error(`field 'lang' is required`);
   }
 
-  let text = req.query.text || (req.body && req.body.text);
+  let text = req.query.text || req.params.text || (req.body && req.body.text);
 
   if (typeof text !== "string") {
     throw new Error(`field 'text' is required`);
@@ -139,7 +142,8 @@ function parseInput(req: Request): InputParams {
     throw new Error(`field 'text' is too long`);
   }
 
-  let country = req.query.country || (req.body && req.body.country);
+  let country =
+    req.query.country || req.params.country || (req.body && req.body.country);
   if (typeof country === "string") {
     country = country.toLowerCase();
   }
