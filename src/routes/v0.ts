@@ -116,7 +116,18 @@ type InputParams = {
 };
 
 function parseInput(req: Request): InputParams {
-  // console.log(JSON.stringify(req));
+  console.log(
+    JSON.stringify(
+      {
+        query: req.query,
+        body: req.body,
+        params: req.params,
+        headers: req.headers
+      },
+      null,
+      2
+    )
+  );
   let lang = req.query.lang || req.params.lang || (req.body && req.body.lang);
   let qsWikidata =
     req.query.wikidata ||
