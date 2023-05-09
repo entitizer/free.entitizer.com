@@ -39,7 +39,7 @@
   },
   "homepage": "https://Mitea@bitbucket.org/entitizer/free-api-js#readme",
   "devDependencies": {
-    "@types/express": "^4.16.0",
+    "@types/express": "4.16.0",
     "@types/lru-cache": "^4.1.1",
     "@types/node": "^14.x.x",
     "ava": "^1.0.1",
