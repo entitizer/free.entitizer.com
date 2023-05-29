@@ -1092,16 +1092,6 @@
     aws-sdk "^2.354.0"
     dynamo-item "^0.1.1"
 
-"@textactor/actor-domain@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@textactor/actor-domain/-/actor-domain-0.2.3.tgz#714447565f42b23a2e8b40cf394d79ef8740171a"
-  integrity sha512-z9g48Js0rDNf2G/QF5d2cASkbNyL6aXPwcWvFJcV+Gynf5J6rXuYSKWDdwCZJp86sTyL7RVRd28tjOZQ3bGOEQ==
-  dependencies:
-    "@textactor/domain" "^0.2.0"
-    fast-array-diff "^0.2.0"
-    joi "^14.0.6"
-    shortid "^2.2.14"
-
 "@textactor/actor-domain@^0.2.4":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@textactor/actor-domain/-/actor-domain-0.2.4.tgz#e0f8d121e0f263978dddf47280de401e3f153cf3"
@@ -1150,14 +1140,14 @@
     joi "^17.4.1"
     standard-text "^0.1.1"
 
-"@textactor/ner@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.2.3.tgz#d3f146a1250edae7e8832143bf5078ffe457d7db"
-  integrity sha512-HBm/fpx/NzZ4ez1CBvb5MQvVzEvUCTAR11bJhbX4wm5f7S6bDzfjmNeMG3QGSS9LqbE+yLdMRxqSy1ypHm2n3w==
+"@textactor/ner@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.3.0.tgz#b3778ac8ca407dd5bd2baf424a534c79f3669729"
+  integrity sha512-uzoR5rxu2lurWKENFcmeA+PfAUs9xfpyz4Nb5h7DW7ar7iYe0HsG2LzfTTb3BoKC368yqYj2UmnESkmrnh0dag==
   dependencies:
-    "@textactor/actor-domain" "^0.2.3"
-    "@textactor/domain" "^0.2.0"
-    concepts-parser "^1.5.4"
+    "@textactor/actor-domain" "^0.2.4"
+    "@textactor/domain" "^0.3.1"
+    concepts-parser "^1.5.5"
 
 "@textactor/wikientity-data@^0.2.0":
   version "0.2.0"
@@ -1863,10 +1853,10 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-concepts-parser@^1.5.4:
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/concepts-parser/-/concepts-parser-1.5.4.tgz#bd6b669cc60b778dcb2b42bc2c8fe4e131d9cf86"
-  integrity sha512-VIgi/LiYeqlKFbw0JiRCwr7+36ryPJQ/tdk/GRPbnwbeL6T0l1YJrtGGMF6eBWuJJhtxCeXGCpM6A0fJSKg5yA==
+concepts-parser@^1.5.5:
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/concepts-parser/-/concepts-parser-1.5.5.tgz#8391c9a843d0d2651470b6c1b7ac2fee7cee5c50"
+  integrity sha512-9M8j6WodVjThRv6jp/syiwbkYmFRsmnVh79K7h0N/AOjfJ0rA++rExjXZhJqS6N7hRUMkdoNhPkTA055gR6OJA==
   dependencies:
     atonic "^1.x.x"
     is-abbr-of "^0.1.2"

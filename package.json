@@ -53,7 +53,7 @@
     "@textactor/concept-data": "^0.3.0",
     "@textactor/concept-domain": "^0.3.1",
     "@textactor/domain": "^0.3.1",
-    "@textactor/ner": "^0.2.3",
+    "@textactor/ner": "^0.3.0",
     "@textactor/wikientity-data": "^0.2.0",
     "@textactor/wikientity-domain": "^0.2.0",
     "aws-sdk": "^2.384.0",
