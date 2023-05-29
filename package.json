@@ -49,10 +49,10 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@textactor/actor-data": "^0.2.1",
-    "@textactor/concept-data": "^0.2.1",
-    "@textactor/concept-domain": "^0.2.1",
-    "@textactor/domain": "^0.2.0",
+    "@textactor/actor-data": "^0.3.0",
+    "@textactor/concept-data": "^0.3.0",
+    "@textactor/concept-domain": "^0.3.1",
+    "@textactor/domain": "^0.3.1",
     "@textactor/ner": "^0.2.3",
     "@textactor/wikientity-data": "^0.2.0",
     "@textactor/wikientity-domain": "^0.2.0",
@@ -62,7 +62,7 @@
     "express": "^4.16.4",
     "express-rate-limit": "^3.3.2",
     "lru-cache": "^5.1.1",
-    "mongodb": "^4.3.0",
+    "mongodb": "^4.16.0",
     "ms": "^2.1.1"
   }
 }
