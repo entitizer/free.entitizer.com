@@ -9,8 +9,8 @@ import {
 import { uniq } from "@textactor/domain";
 import { EResult } from "@textactor/ner";
 import { WikiEntity } from "@textactor/wikientity-domain";
-import { logger } from "@textactor/actor-domain/dest/logger";
 import { LearningTextHelper } from "@textactor/concept-domain";
+import { logger } from "../logger";
 export const route: Router = express.Router();
 const ms = require("ms");
 
