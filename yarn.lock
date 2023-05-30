@@ -1082,7 +1082,7 @@
   resolved "https://registry.yarnpkg.com/@sideway/pinpoint/-/pinpoint-2.0.0.tgz#cff8ffadc372ad29fd3f78277aeb29e632cc70df"
   integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
 
-"@textactor/actor-data@^0.3.0":
+"@textactor/actor-data@^0.3.x":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@textactor/actor-data/-/actor-data-0.3.0.tgz#88d9897e4a71c8ffdadc31a3a3dfaf0fde60a1d4"
   integrity sha512-8npGDon3tZnNdMUR6TmFQ6+jXY32xDtgYSQMDB+oZQ5AN9PTtJyEW4/sngiXpbiQ1Hx8cBvNTjT8qkISKKlx+A==
@@ -1092,7 +1092,7 @@
     aws-sdk "^2.354.0"
     dynamo-item "^0.1.1"
 
-"@textactor/actor-domain@^0.2.4":
+"@textactor/actor-domain@^0.2.4", "@textactor/actor-domain@^0.2.x":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@textactor/actor-domain/-/actor-domain-0.2.4.tgz#e0f8d121e0f263978dddf47280de401e3f153cf3"
   integrity sha512-IsHzXGNZRd+WEr/pk5gUn7BWE3QCxgHN2nhCfWEB9gRCVQjeq/Iu5R27NkZqszZVqkttc64WS0R0xNvNAwhyzg==
@@ -1102,7 +1102,7 @@
     joi "^17.4.1"
     shortid "^2.2.14"
 
-"@textactor/concept-data@^0.3.0":
+"@textactor/concept-data@^0.3.x":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@textactor/concept-data/-/concept-data-0.3.0.tgz#51da0f5418bfa1cbbdc770c730d1bffbd08a0dbc"
   integrity sha512-7isoD4btbpLxtrH1uHvCwiKwQeRr81HTwCnL8Ug9V4y+KqRPMasFPQTYlDVyVC1piT519Rn3LolhfAJU64OcCw==
@@ -1112,7 +1112,7 @@
     dynamo-item "^0.1.1"
     mongo-item "^0.2.2"
 
-"@textactor/concept-domain@^0.3.0", "@textactor/concept-domain@^0.3.1":
+"@textactor/concept-domain@^0.3.0", "@textactor/concept-domain@^0.3.x":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@textactor/concept-domain/-/concept-domain-0.3.1.tgz#2610ede42f60c5244eab4e38100975afd249042b"
   integrity sha512-LmHh5prwSC8xfqqhV7WViu26VsUn/lgmnsGCZqvg7Tae4gUZq7mH9cG5uf1gplfGUsMwPodNVVQtnV9G/V14Dw==
@@ -1131,7 +1131,7 @@
     joi "^14.0.4"
     standard-text "^0.1.1"
 
-"@textactor/domain@^0.3.1":
+"@textactor/domain@^0.3.1", "@textactor/domain@^0.3.x":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@textactor/domain/-/domain-0.3.1.tgz#1bf4ce8455b51b5fc1549be73440d649e9f8c865"
   integrity sha512-/mhpGy0FmfRrf8RrQnqjK1IShlVM36LRTHkVfJ7oaQXitNmGafDjonJJjusq716BTx2SwjYyFbhB/EhSjIS49A==
@@ -1140,16 +1140,16 @@
     joi "^17.4.1"
     standard-text "^0.1.1"
 
-"@textactor/ner@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.3.0.tgz#b3778ac8ca407dd5bd2baf424a534c79f3669729"
-  integrity sha512-uzoR5rxu2lurWKENFcmeA+PfAUs9xfpyz4Nb5h7DW7ar7iYe0HsG2LzfTTb3BoKC368yqYj2UmnESkmrnh0dag==
+"@textactor/ner@^0.3.x":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@textactor/ner/-/ner-0.3.1.tgz#b5d81a0a923cf15753595fd7d696d0af9dada59c"
+  integrity sha512-6+Z5k+437SJ3oT8ph6DsinwSYYLagJSYZNsFSG3oMDZ801TQuvrAGR05bFmgL1ad4yAA89BvvW2A0APec09MSw==
   dependencies:
-    "@textactor/actor-domain" "^0.2.4"
-    "@textactor/domain" "^0.3.1"
-    concepts-parser "^1.5.5"
+    "@textactor/actor-domain" "^0.2.x"
+    "@textactor/domain" "^0.3.x"
+    concepts-parser "^1.5.x"
 
-"@textactor/wikientity-data@^0.2.0":
+"@textactor/wikientity-data@^0.2.x":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@textactor/wikientity-data/-/wikientity-data-0.2.0.tgz#3d8e6c75a946e289348151e35b08f3e1618318b5"
   integrity sha512-P93A/zwigFCavbVoTHQ1Us239L4SCFrRwlGtBGIPmCf32JUK//Bv+6PLRCezi1d66v56aDW+CGQEvIYTVkbIQg==
@@ -1159,7 +1159,7 @@
     aws-sdk "^2.354.0"
     dynamo-item "^0.1.1"
 
-"@textactor/wikientity-domain@^0.2.0":
+"@textactor/wikientity-domain@^0.2.0", "@textactor/wikientity-domain@^0.2.x":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@textactor/wikientity-domain/-/wikientity-domain-0.2.0.tgz#811d5b00133ab6f421e12f08ab32c147b1f71a35"
   integrity sha512-r/dgYDmvSSKk3i1luh9EstI4tTvnaGqgHNPfrah40JHsozW+gVfksUAsArf9uASPqmd3D7x58NZz+yxHxkGMRw==
@@ -1853,10 +1853,10 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-concepts-parser@^1.5.5:
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/concepts-parser/-/concepts-parser-1.5.5.tgz#8391c9a843d0d2651470b6c1b7ac2fee7cee5c50"
-  integrity sha512-9M8j6WodVjThRv6jp/syiwbkYmFRsmnVh79K7h0N/AOjfJ0rA++rExjXZhJqS6N7hRUMkdoNhPkTA055gR6OJA==
+concepts-parser@^1.5.x:
+  version "1.5.6"
+  resolved "https://registry.yarnpkg.com/concepts-parser/-/concepts-parser-1.5.6.tgz#8efa8bd0924916f5283b75aef08310398afd2fb1"
+  integrity sha512-+rWY/CdNkqTXq6hJ9gklFQslvEzM4byoCa2VeMIpJhT8Y0cVGoNVQ5GPr65O6Z7zYzI1sTkjW/uXTR7qNmus4A==
   dependencies:
     atonic "^1.x.x"
     is-abbr-of "^0.1.2"
