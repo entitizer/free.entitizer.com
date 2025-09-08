@@ -3,7 +3,7 @@
     "module": "commonjs",
     "outDir": "lib",
     "rootDir": "./src",
-    "target": "es6",
+    "target": "esnext",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,

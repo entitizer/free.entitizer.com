@@ -3854,6 +3854,11 @@ quick-lru@^1.0.0:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-1.1.0.tgz#4360b17c61136ad38078397ff11416e186dcfbb8"
   integrity sha1-Q2CxfGETatOAeDl/8RQW4Ybc+7g=
 
+quote-parser@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/quote-parser/-/quote-parser-1.0.0.tgz#d848bf47d565407c60cef73df3c5d48112a21a4c"
+  integrity sha512-BkOyrcSHF7YcLPQnt79WYStEkMSsSJdq4VwbcVioI757kOxgLQUn894kWuOn537ru6n99405+DipYqyJAESWwQ==
+
 range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"

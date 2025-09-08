@@ -11,6 +11,7 @@ import { EResult } from "@textactor/ner";
 import { WikiEntity } from "@textactor/wikientity-domain";
 import { LearningTextHelper } from "@textactor/concept-domain";
 import { logger } from "../logger";
+import { Person, parse } from "quote-parser";
 export const route: Router = express.Router();
 const ms = require("ms");
 
@@ -64,7 +65,7 @@ function keyExtract(req: Request, res: Response) {
 }
 
 function extractAndSendResult(input: InputParams, res: Response) {
-  const { lang, country, text, wikidata } = input;
+  const { lang, country, text, wikidata, quotes } = input;
 
   if (text && text.trim().length > 100) {
     learningTextRepository
@@ -79,6 +80,9 @@ function extractAndSendResult(input: InputParams, res: Response) {
         result.entities.forEach((item) => item.entity && delete item.entity.id);
         if (wikidata) {
           (<any>result).wikidata = await getResultWikidata(lang, result);
+        }
+        if (quotes) {
+          (<any>result).quotes = await getResultQuotes(text, lang, result);
         }
       }
       return result;
@@ -108,11 +112,32 @@ async function getResultWikidata(lang: string, result: EResult) {
   return wikidata;
 }
 
+async function getResultQuotes(text: string, lang: string, result: EResult) {
+  const persons: Person[] = result.entities
+    .filter(
+      (item) =>
+        item.entity && item.entity.type === "PERSON" && item.entity.wikiDataId
+    )
+    .map((item) =>
+      item.input.map<Person>((it) => ({
+        id: item.entity.wikiDataId,
+        index: it.index
+      }))
+    )
+    .flat();
+
+  if (persons.length === 0) {
+    return [];
+  }
+  return parse(text, lang.toLowerCase(), { persons });
+}
+
 type InputParams = {
   lang: string;
   country: string;
   text: string;
   wikidata: boolean;
+  quotes: boolean;
 };
 
 function parseInput(req: Request): InputParams {
@@ -121,6 +146,8 @@ function parseInput(req: Request): InputParams {
     req.query.wikidata ||
     req.params.wikidata ||
     (req.body && req.body.wikidata);
+  let qsQuotes =
+    req.query.quotes || req.params.quotes || (req.body && req.body.quotes);
   if (typeof lang === "string") {
     lang = lang.toLowerCase();
   }
@@ -157,6 +184,7 @@ function parseInput(req: Request): InputParams {
     lang,
     country,
     text,
-    wikidata: ["true", "True", "1", "yes", "on"].indexOf(qsWikidata) > -1
+    wikidata: ["true", "True", "1", "yes", "on"].indexOf(qsWikidata) > -1,
+    quotes: ["true", "True", "1", "yes", "on"].indexOf(qsQuotes) > -1
   };
 }
