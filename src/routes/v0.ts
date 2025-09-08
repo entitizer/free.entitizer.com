@@ -121,6 +121,7 @@ async function getResultQuotes(text: string, lang: string, result: EResult) {
     .map((item) =>
       item.input.map<Person>((it) => ({
         id: item.entity.wikiDataId,
+        name: item.entity.name,
         index: it.index
       }))
     )
