@@ -8,7 +8,7 @@ import {
 } from "../data";
 import { uniq } from "@textactor/domain";
 import { EResult } from "@textactor/ner";
-import { WikiEntity } from "@textactor/wikientity-domain";
+import { WikiEntity, WikiEntityHelper } from "@textactor/wikientity-domain";
 import { LearningTextHelper } from "@textactor/concept-domain";
 import { logger } from "../logger";
 import { Person, parse } from "quote-parser";
@@ -51,7 +51,13 @@ route.get(
   hourApiLimiter,
   async (req: Request, res: Response) => {
     try {
-      const entity = await wikiEntityRepository.getById(req.query.id as string);
+      const it = WikiEntityHelper.build({
+        name: "Test",
+        wikiDataId: req.query.id as string,
+        lang: (req.query.lang as string) || "en",
+        countLinks: 0
+      });
+      const entity = await wikiEntityRepository.getById(it.id);
       if (entity) {
         return sendSuccess(res, entity);
       } else {
