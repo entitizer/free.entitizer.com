@@ -64,6 +64,6 @@
     "lru-cache": "^5.1.1",
     "mongodb": "^4.16.0",
     "ms": "^2.1.1",
-    "quote-parser": "^1.0.0"
+    "quote-parser": "^1.0.1"
   }
 }
