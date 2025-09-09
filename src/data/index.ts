@@ -15,7 +15,7 @@ import { LearningTextRepositoryBuilder } from "@textactor/concept-data";
 
 const dynamoDbClient = new DynamoDB.DocumentClient();
 
-const actorRepository = ActorRepositoryBuilder.build(dynamoDbClient);
+export const actorRepository = ActorRepositoryBuilder.build(dynamoDbClient);
 const actorNameRepository = ActorNameRepositoryBuilder.build(dynamoDbClient);
 
 export const extractor = new Extractor(actorRepository, actorNameRepository);

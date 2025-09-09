@@ -45,6 +45,24 @@ route.get(
   }
 );
 
+route.get(
+  "/entity",
+  secondApiLimiter,
+  hourApiLimiter,
+  async (req: Request, res: Response) => {
+    try {
+      const entity = await wikiEntityRepository.getById(req.query.id as string);
+      if (entity) {
+        return sendSuccess(res, entity);
+      } else {
+        return sendError(res, 404, "Not found");
+      }
+    } catch (e) {
+      return sendError(res, 400, e.message);
+    }
+  }
+);
+
 route.get("/key_extract", keyExtract);
 route.post("/key_extract", keyExtract);
 
